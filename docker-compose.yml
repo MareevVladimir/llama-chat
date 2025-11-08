@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./llama-chat-backend
+    container_name: llama-chat-backend
+    ports:
+      - "8000:8000"
+    environment:
+      LLAMA_SERVER_URL: http://localhost:1488
+    restart: unless-stopped
+
